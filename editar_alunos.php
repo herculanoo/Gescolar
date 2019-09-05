@@ -6,7 +6,7 @@ if(isset($_REQUEST['atualizar ']))
 {   
     try
     { 
-        include 'includes/conexao.php;'
+        include 'includes/conexao.php';
 
         $sql = "UPDATE alunos SET nome = ?, data de nascimento = ?, sexo = ?,
                        genero = ?, cpt = ?, cidade = ?, estado = ?,
@@ -25,7 +25,7 @@ if(isset($_REQUEST['atualizar ']))
         $stmt->bindParam(9,$_RESQUEST['rua']);
         $stmt->bindParam(10,$_RESQUEST['cep']);
         $stmt->bindParam(11,$_RESQUEST['id_aluno']);
-        $stmt->execute()
+        $stmt->execute();
 
     } catch(Exception $e) { 
         echo $e->getMessage();
