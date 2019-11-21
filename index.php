@@ -1,3 +1,21 @@
+<?php
+
+//caso o usuário clique em sair 
+if(isset($_RESQUEST['sair'])) {
+
+        unset($_SESSION['gescolar_dados_usuarios'])//destroi a sessão de autenticação do usuário.
+        header("location login.php");//redireciona para a pagina de loin
+}
+
+//protegendo a pagina contra acesso sem autenticação
+if(!isset($_SESSION['gescolar_dados_usuarios']))
+     header("location login.php");//redireciona para a pagina de login
+}
+
+// abreviando o nome variavel que contém os dados do úsuario.
+$usuario = $_SESSION['gescolar_dados-usuario'];
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
